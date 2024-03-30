@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct2w2tf1aqfmv"]
+
+[ext_resource type="Script" path="res://game_over_layer.cs" id="1_7xcq0"]
+[ext_resource type="FontFile" uid="uid://dtltnhk781eq5" path="res://font/PoetsenOne-Regular.ttf" id="1_ojul8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84bdy"]
+bg_color = Color(0, 0.164706, 0.0862745, 1)
+shadow_color = Color(0, 0.121569, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnwno"]
+bg_color = Color(0, 0.341176, 0.164706, 1)
+
+[node name="GameOverLayer" type="CanvasLayer"]
+script = ExtResource("1_7xcq0")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -165.5
+offset_right = 223.0
+offset_bottom = 165.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_84bdy")
+
+[node name="RestartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -6.0
+offset_right = 118.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
+theme_override_fonts/font = ExtResource("1_ojul8")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_hnwno")
+text = "Play Again"
+
+[node name="ResultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -97.0
+offset_right = 117.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.921569, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ojul8")
+theme_override_font_sizes/font_size = 43
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="RestartButton" to="." method="OnRestartButtonPressed"]

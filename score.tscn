@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://b638cpcddv4ik"]
+
+[ext_resource type="FontFile" uid="uid://dtltnhk781eq5" path="res://font/PoetsenOne-Regular.ttf" id="1_jsodd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_roit1"]
+bg_color = Color(0.0666667, 0.686275, 0.180392, 1)
+shadow_color = Color(0, 0.65098, 0, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(1, 1)
+
+[node name="Score" type="CanvasLayer"]
+
+[node name="ScorePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_roit1")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -45.0
+offset_right = 126.0
+offset_bottom = -5.0
+grow_vertical = 0
+scale = Vector2(1.00129, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("1_jsodd")
+theme_override_font_sizes/font_size = 26
+text = "Score: 0"
